@@ -1,0 +1,251 @@
+ /*//Methods to set value to variable.
+        function set_name($formAsked)
+        {
+            $this->formAsked = $formAsked;
+        }
+
+        function get_name()
+        {
+            return $this->name;
+        }*/
+
+        function newFrame($formAsked)
+        {
+            if($this->name == "newUser")
+            {
+                echo"<iFrame width="800" height="600">
+                
+                </iFrame>";
+            }
+        }
+
+        main{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.frameMesures{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+if(!mysqli_query($conn, $query))
+    {
+        die('Error: '.mysqli_error($conn));
+    }
+
+    else 
+    {
+        echo '<script type="text/javascript">
+        alert("Succefully logged.");
+        window.location.href="../index.php"
+        </script>';
+    }
+
+    header("Please enter your password.");
+        exit();
+
+
+
+for($photoCtr = 0; $photoCtr <= 4; $photoCtr++)
+                {
+                    if($photoCtr == 1)
+                    {
+
+                        echo "<a href= target=displayer><img src=images/showcaseImg/aboutUS.jpg alt= About us></a>";
+                    }
+
+                    else if($photoCtr == 2)
+                    {
+                        $imgToDis = "images/showcaseImg/departments.jpg";
+                        echo $imgToDis;
+                    }
+
+                        else if($photoCtr == 3)
+                    {
+                        $imgToDis = "images/showcaseimg/location.jpg";
+                        echo $imgToDis;
+                    }
+
+                    else
+                    {
+                        $imgToDis = "images/shocaseImge/offers.jpg";
+                        echo $imgToDis;
+                    }
+                }
+
+$dir_path = "imgages/showcaseImg/";
+                                $extensions_array = array('jpg', 'png');
+
+                                if(is_dir($dir_path))
+                                {
+                                    $photo = scandir($dir_path);
+
+                                    for($phtCounter = 0; $phtCounter < count($photo); $phtCounter++)
+                                    {
+                                        if($photo[$phtCounter] !='.' && $photo[$phtCounter] !='..')
+                                        {
+                                            $file = pathinfo($photo[$phtCounter]);
+                                            $extension = $file['extension'];
+                                            echo "<a><img src='$dir_path$photo[$phtCounter]'></a>";
+                                        }
+                                    }
+                                }
+
+
+$showcaseFNCT = true;
+                        function showCase($showcaseFNCT)
+                        {
+                            $activeSHCSE = $showcaseFNCT;
+                            $imgToDis = "";
+                            do
+                            {
+                                foreach (glob(".jpg") as $filename)
+                                {
+                                    echo "<a><img src='$filename' alt='$filename'></a>";
+                                }
+                            }while($activeSHCSE == true);
+                        }
+
+switch($counter)
+        {
+            case 1:
+                echo "<a><img src=../images/showcaseImg/image$counter.jpg style=width=10px height=500px alt=><h2 class=slider>About Us</h2></a>";
+                sleep(10);
+                
+                break;
+                
+            case 2:
+                echo "<a><img src=../images/showcaseImg/image$counter.jpg style=width=10px height=500px alt=><h2 class=slider>About Us</h2></a>";
+                sleep(10);
+                break;
+            
+            case 3:
+                echo "<a><img src=../images/showcaseImg/image$counter.jpg style=width=10px height=500px alt=><h2 class=slider>About Us</h2></a>";
+                sleep(10);
+                break;
+            
+            case 4:
+                echo "<a><img src=../images/showcaseImg/image$counter.jpg style=width=10px height=500px alt=><h2 class=slider>About Us</h2></a>";
+                sleep(10);
+                break;
+                    
+        }
+
+
+        for($counter1 = 0; $counter <= $numberOfphts; $counter++)
+    {
+        if($counter1 == 1)
+        {
+            echo "<a><img src=../images/showcaseImg/image$counter.jpg style=width=10px height=500px alt=><h2 class=slider>About Us</h2></a>";
+
+        }
+    }
+
+    https://foolishdeveloper.com/dynamic-image-slider-php/
+
+
+
+
+    <div class="slider">
+    <?php
+        // $numberOfphts = count(glob('images/showcaseImg/{*.jpg}',GLOB_BRACE));//Get the cuantity of photos.
+        // //echo $numberOfphts;
+        // $counter = 0;
+
+        $imagesLoc = "../images/showcaseImg/";
+        $photos = scandir($imagesLoc);
+        foreach($photos as $Photo)
+        {
+            $photo_info = pathinfo($Photo);
+            if($photo_info['extension'] == 'jpg')
+            {
+                echo '<div class sliderPhotos>
+                            <img decoding= "async" src="'.$imagesLoc.$Photo.'"><noscript><img decoding="async" src="'.$imagesLoc.$Photo.'"/></noscript>
+                        </div>
+                
+                <script type="text/javascript">
+                    var index = 0;
+                    var images = [];
+                    var time = 3000
+
+                    //Array to save the photos.
+
+                    images[0] = "image1.jpg";
+                    images[1] = "image2.jpg";
+                    images[2] = "image3.jpg";
+                    images[3] = "image4.jpg";
+
+                    //script for photo change.
+
+                    function changePhts()
+                    {
+                        document.sliderPhotos.src = images[index];
+
+                        if(index < images.length - 1)
+                        {
+                            index++;
+                        }
+        
+                        else
+                        {
+                            index = 0;
+                        }
+
+                        setTimeout("changePhts()", time);
+                    }
+
+                    window.onload = changePhts;
+                </script>';
+            }
+        }
+    ?>
+</div>
+
+
+<?php
+        // $numberOfphts = count(glob('images/showcaseImg/{*.jpg}',GLOB_BRACE));//Get the cuantity of photos.
+        // //echo $numberOfphts;
+        // $counter = 0;
+
+        $folder = '../images/showcaseImg/';
+        $files = scandir($folder);
+        foreach($files as $file) {
+            $file_parts = pathinfo($file);
+            if($file_parts['extension'] == 'jpg') {
+                echo '<div class="slide">';
+                echo "<img src=$folder.$file/><noscript><img src=$folder.$file/></noscript>";
+                echo '</div>
+                
+<script type="rocketlazyloadscript">
+var current = 0,
+    slides = document.getElementsByClassName(slide);
+function nextSlide(){
+    goToSlide(current+1);
+}
+function previousSlide(){
+    goToSlide(current-1);
+}
+function goToSlide(n){
+    slides[current].className = slide;
+    current = (n+slides.length)%slides.length;
+    slides[current].className = slide showing;
+}
+
+var next = document.getElementById(next);
+var previous = document.getElementById(previous);
+
+next.onclick = function(){
+    nextSlide();
+};
+previous.onclick = function(){
+    previousSlide();
+};
+</script>';
+            }
+        }
+    ?>
