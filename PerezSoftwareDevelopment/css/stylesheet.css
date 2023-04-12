@@ -95,13 +95,13 @@ form{
   border: 0;
 }
 
-.carousel__button--left{
+/* .PSDcarousel__button--left{
   left: -40px;
 }
 
-.carousel__button--rigth{
+.PSDcarousel__button--rigth{
   right: -40px;
-}
+} */
 
 .carousel_nav{
   background: lightcoral;
@@ -124,6 +124,6 @@ form{
   background: lightseagreen;
 }
 
-.is-hiddden {
+/* .is-hiddden {
   display: none;
-}
+} */
