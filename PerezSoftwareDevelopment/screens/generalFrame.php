@@ -8,7 +8,7 @@
         <ul class="carousel__track">
             <li class="carousel__slide currentSlide">
                 <a>
-                    <img src="../images/showcaseImg/aboutUs.jpg" id="aboutUs img" alt="About Us" class="carousel__image"><h2>About Us:</h2>
+                    <img src="../images/showcaseImg/work.jpg" id="aboutUs img" alt="About Us" class="carousel__image"><h2>About Us:</h2>
                 </a>
             </li>
 

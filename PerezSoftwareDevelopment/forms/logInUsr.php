@@ -1,8 +1,10 @@
 <?php
     require('../include/connect.php');
+    require('../screens/logedUser.php');
 
     $Email = mysqli_real_escape_string($conn, $_POST['userEmail']);
     $Password = mysqli_real_escape_string($conn, $_POST['userPass']);
+    
     
 
     if(empty($Email))
@@ -29,9 +31,12 @@
             $row = mysqli_fetch_assoc($result);
             if($row['Email'] === $Email && $row['UserPassword'] === $Password)
             {
+                $userFRSTName = "SELECT FirstName FROM users WHERE Email='$Email' AND UserPassword='$Password'";
+                $userLSTName = "SELECT Lastname FROM users WHERE Email='$Email' AND UserPassword='$Password'";
+                userCRDTS($userFRSTName, $userLSTName);
                 echo '<script type="text/javascript">
                 alert("Succefully logged.");
-                window.location.href="../index.php"
+                window.location.href="../screens/logedUser.php"
                 </script>';
             }
 

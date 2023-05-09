@@ -9,8 +9,9 @@
 <!--Class on charge of buttons for Sign in and Sign up.-->
 
 <div class="logBTTNS">
-    <a href="forms/logInUserForm.php" target="displayer"><img src="images/currentUser.png" alt="Existing user button" style="width:75px; height: 75px;"></a>
+    <a href="forms/logInUserForm.php" id="logBTTNS" target="displayer"><img src="images/currentUser.png" alt="Existing user button" style="width:75px; height: 75px;"></a>
     <a href="forms/createUserForm.php" target="displayer"><img src="images/addUser.png" alt="Add User button" style="width:75px; height: 75px;"></a>
+
 </div>
 
 <!--Class on charge of menu-->

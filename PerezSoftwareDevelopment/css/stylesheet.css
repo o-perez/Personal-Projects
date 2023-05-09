@@ -41,12 +41,39 @@ a:link, a:visited{
     height: 700px;
 }
 
-form{
+.logForm{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font: size 14px;
-    margin: auto;
+    font-size: 14px;
+    margin-right:50%;
 }
 
+.logForm{
+  position: relative;
+  object-fit: cover;
+  justify-content: center;
+}
+
+/* .popHeaderForms{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 300px;
+  padding: 20px, 30px;
+  background-color: crimson;
+  box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  transition: transform 0.4s, top 0.4s;
+  visibility: hidden;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate( -50%,-50%) scale(1);
+
+} */
 .carousel{
   position: relative;
   height: 400px;
