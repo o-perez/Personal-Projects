@@ -41,17 +41,23 @@ a:link, a:visited{
     height: 700px;
 }
 
-.logForm{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 14px;
-    margin-right:50%;
-}
-
-.logForm{
-  position: relative;
-  object-fit: cover;
-  justify-content: center;
-}
+.form{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+           
+            position: relative;
+        }
+       .logForm{
+            position: absolute;
+            object-fit: cover;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 30px;
+            margin:auto;
+            align-content: center;
+             left: 50%;
+        }
 
 /* .popHeaderForms{
   position: absolute;

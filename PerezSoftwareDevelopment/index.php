@@ -20,7 +20,7 @@
         </header>
 
         <main>
-            <iFrame name="displayer" width="1500" height="500" src="screens/generalFrame.php" ></iFrame>
+            <iFrame name="displayer" width="1500" height="500" src="screens/generalFrame.php"></iFrame>
         </main>
         <footer>
         </footer>
