@@ -1,6 +1,7 @@
 .logBTTNS{
     overflow: hidden;
     float: right;
+    margin-top: -10px;
 }
 .logo{
     overflow: hidden;
@@ -19,7 +20,7 @@ hr{
 }
 .navTable, th{
     width: 1000px;
-    background-color: cadetblue;
+    background-color: lightcoral;
     border-right: 2px solid white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: larger;
@@ -40,24 +41,6 @@ a:link, a:visited{
     width: 1500px;
     height: 700px;
 }
-
-.form{
-            align-items: center;
-            justify-content: center;
-            display: flex;
-           
-            position: relative;
-        }
-       .logForm{
-            position: absolute;
-            object-fit: cover;
-            justify-content: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 30px;
-            margin:auto;
-            align-content: center;
-             left: 50%;
-        }
 
 /* .popHeaderForms{
   position: absolute;
@@ -80,6 +63,8 @@ a:link, a:visited{
   transform: translate( -50%,-50%) scale(1);
 
 } */
+
+/* CSS for carouser begins. */
 .carousel{
   position: relative;
   height: 400px;
@@ -156,7 +141,39 @@ a:link, a:visited{
 .carousel_indicator.currentSlide{
   background: lightseagreen;
 }
+/*CSS for carousel ends here*/
 
+body{
+  background-color: cadetblue;
+}
+
+.genPar{
+  font-family: 'Courier New', Courier, monospace;
+  display: block;
+  font-size: large;
+  justify-content: center;
+  text-indent: 10px;
+}
+
+.footerP{
+  font-family: 'Times New Roman';
+  font-size: 12px;
+  margin-top: 100px;
+  font-style: bold italic;
+}
+
+.footerLists #L2{
+  margin-top: -110px;
+  margin-left: 20%;
+}
+
+.footerLists #L1 #L2{
+  list-style: none;
+}
+
+.genIMGS img{
+  width: 100%;
+}
 /* .is-hiddden {
   display: none;
 } */

@@ -7,8 +7,8 @@
     <div class="carousel__track-container">
         <ul class="carousel__track">
             <li class="carousel__slide currentSlide">
-                <a>
-                    <img src="../images/showcaseImg/work.jpg" id="aboutUs img" alt="About Us" class="carousel__image"><h2>About Us:</h2>
+                <a href="aboutUs.php" target="_top">
+                    <img src="../images/showcaseImg/About-us.jpg" id="aboutUs img" alt="About Us" class="carousel__image"><h2>About Us:</h2>
                 </a>
             </li>
 

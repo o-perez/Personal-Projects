@@ -84,6 +84,7 @@
                 <label>Email: &nbsp;&nbsp;&nbsp;<input type="email" name="userEmail" ></label>
                 <br>
                 <label>Password: &nbsp;&nbsp;&nbsp;<input type="password" name="userPass" ></label>
+                <br>
                 <button type="submit" name="confirmUser" class="frmBTNS">Confirm</button>
                 <button type="reset" name="resetUserForm" class="frmBTNS">Reset</button>
                 <input type="button" value="Close" onclick="history.close()" class="frmBTNS" >

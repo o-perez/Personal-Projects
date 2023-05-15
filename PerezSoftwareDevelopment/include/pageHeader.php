@@ -20,8 +20,8 @@
         <tr>
             <th><a href="index.php">Home</a></th>
             <th><a>Departments</a></th>
-            <th><a>Locations</a></th>
-            <th><a>About Us</a></th>
+            <th><a href="screens/location.php">Locations</a></th>
+            <th><a href="screens/aboutUs.php">About Us</a></th>
         </tr>
     </table>
 </div>

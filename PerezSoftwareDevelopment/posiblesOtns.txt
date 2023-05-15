@@ -272,3 +272,27 @@ previous.onclick = function(){
                 popUP.classList.remove("open-popup");
             }
         </script> -->
+
+
+         <?php
+                        $query = "SELECT * FROM products";
+                        $result = $conn -> query($query);
+                        while($row=$result->fetch_assoc()){
+                            $idArt = $row['ProductID'];
+                            $nameArt = $row['Name'];
+                            $descriptionArt = $row['Description'];
+                            $price = $row['Price'];
+                            $imageArt = $row['Product_Img'];
+                            // $nombreCat = $row['NombreCat'];
+                    ?>
+
+                        <?php for($counter = 0; $counter <= 5; $counter = $counter + 1){?>
+                            <a>
+                                <?php echo $idArt;?>
+                                <?php echo $nameArt;?>
+                                <?php echo $descriptionArt;?>
+                                <?php echo $price;?>
+                                <img src="<?php echo $imageArt;?>"> 
+                            </a>
+                        <?php }?>
+                    <?php } ?>
