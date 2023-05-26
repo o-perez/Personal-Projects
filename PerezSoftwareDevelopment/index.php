@@ -22,32 +22,85 @@
         </div>
 
         <main>
+            <!-- Frame to present Carousel. -->
             <div id="frame">
                 <iFrame name="displayer" width="1500" height="500" src="screens/generalFrame.php"></iFrame>
             </div>
             
-            <div id="mostSell">
-                <div class="article">
-                <?php
-                $query = "SELECT `ProductID`, `Name`, `Product_Img` FROM `products` WHERE 1;";;
-                $result = $conn -> query($query); 
-                for($counter = 0; $counter <= 5; $counter = $counter + 1){?>
-                    <?php while($row=$result->fetch_assoc()){
-                            $idArt = $row['ProductID'];
-                            $nameArt = $row['Name'];
-                            // $descriptionArt = $row['Description'];
-                            // $price = $row['Price'];
-                            $imageArt = $row['Product_Img'];
-                            // $nombreCat = $row['NombreCat'];
-                    ?>
+            <!-- Most sell category -->
+            <div id="mostSell"> 
+                <div class="highligtsPrdts">
+                    <h3 class="secTitle">OUR MOST SELL</h3>
+                    <a href="screens/allProducts.php" class="viewALLPrdcts">View all our products</a>
+                </div>
 
-                        <a>
-                                <?php echo $idArt;?>
-                                <?php echo $nameArt;?>
-                                <img src="<?php echo $imageArt;?>"> 
-                        </a>
+                <div class="article">
+                    <?php
+                        $query = "SELECT `ProductID`, `Name`, `Product_Img` FROM `products` WHERE Price > 0.00 AND Sold >= 50;";
+                        $result = $conn -> query($query); 
+                        for($counter = 0; $counter <= 5; $counter = $counter + 1){?>
+                            <?php while($row=$result->fetch_assoc()){
+                                $idArt = $row['ProductID'];
+                                $nameArt = $row['Name'];
+                                // $descriptionArt = $row['Description'];
+                                // $price = $row['Price'];
+                                $imageArt = $row['Product_Img'];
+                                // $nombreCat = $row['NombreCat'];
+                            ?>
+                            <ul mstSellLst>
+                                <li class="artList">
+                                    <a  href="screens/productInfo.php?GetID=<?php echo $row['ProductID']; ?>"> 
+                                        <div >
+                                            <img src="<?php echo $imageArt;?>" class="artPhoto"> 
+                                        </div>
+
+                                        <div class="artName">
+                                            <?php echo $nameArt;?>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php }?>
                     <?php }?>
-                <?php }?>
+                </div>                     
+            </div>
+            
+            <!-- Free products -->
+            <div id="freeProducts"> 
+                <div class="highligtsPrdts">
+                    <h3 class="secTitle">TOP FREE PRODUCTS</h3>
+                    <a href="screens/allProducts.php"class="viewALLPrdcts">View all our products</a>
+                </div>
+
+                <div class="article">
+                    <?php
+                        $query2 = "SELECT `ProductID`, `Name`, `Product_Img` FROM `products` WHERE Price = 0.00 AND Sold >= 50;";
+                        $result2 = $conn -> query($query2); 
+                        for($counter2 = 0; $counter2 <= 5; $counter2 = $counter2 + 1){?>
+                            <?php while($row=$result2->fetch_assoc()){
+                                $idArt = $row['ProductID'];
+                                $nameArt = $row['Name'];
+                                // $descriptionArt = $row['Description'];
+                                // $price = $row['Price'];
+                                $imageArt = $row['Product_Img'];
+                                // $nombreCat = $row['NombreCat'];
+                            ?>
+                            <ul mstSellLst>
+                                <li class="artList">
+                                    <a href="screens/productInfo.php?GetID=<?php echo $row['ProductID']; ?>"> 
+                                        <div >
+                                            <img src="<?php echo $imageArt;?>" class="artPhoto"> 
+                                        </div>
+
+                                        <div class="artName">
+                                            <?php echo $nameArt;?>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php }?>
+                    <?php }?>
+                </div>                     
             </div>
         </main>
 

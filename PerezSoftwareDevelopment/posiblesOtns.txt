@@ -296,3 +296,117 @@ previous.onclick = function(){
                             </a>
                         <?php }?>
                     <?php } ?>
+
+
+<table>
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Category</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                    </tbody>
+                <?php for($counter1 = 0; $counter1 <= 6; $counter1++){ ?>
+                    <?php for($counter2 = 0; $counter2 <= 5; $counter2++){?>
+                    <?php }?>
+                <?php }?>
+                </table>
+        <table>
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Category</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php for($counterPRDCT = 0; $counterPRDCT <= 10; $counterPRDCT++){ ?>
+                            <?php $queryPRDCT = "SELECT `ProductID`, `Name`, `Description`, `Cat_Name`, `Product_Img`, `Price` FROM `products`;";
+                                $resultPRDCT = $conn -> query($queryPRDCT); 
+                                while($row=$resultPRDCT->fetch_assoc()){
+                                    $idPRDCT = $row['ProductID'];
+                                    $namePRDCT = $row['Name'];
+                                    $descriptionPRDCT = $row['Description'];
+                                    $price = $row['Price'];
+                                    $imagePRDCT = $row['Product_Img'];
+                                    $productCat = $row['Cat_Name'];
+                            ?>
+                            <tr>
+                                <td><img src="<?php echo "../".$imagePRDCT;?>" class="artPhoto"></td>
+                                <td><?php echo $namePRDCT?></td>
+                                <td><?php echo $descriptionPRDCT?></td>
+                                <td><?php echo $productCat?></td>
+                                <td><?php echo $price?></td>
+                            </tr>
+                            <?php }?>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+
+
+                <div class="productTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Category</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php $queryPRDCT = "SELECT `ProductID`, `Name`, `Description`, `Cat_Name`, `Product_Img`, `Price` FROM `products`;";
+                                $resultPRDCT = $conn -> query($queryPRDCT); 
+                                while($row=$resultPRDCT->fetch_assoc()){
+                                    $idPRDCT = $row['ProductID'];
+                                    $namePRDCT = $row['Name'];
+                                    $descriptionPRDCT = $row['Description'];
+                                    $price = $row['Price'];
+                                    $imagePRDCT = $row['Product_Img'];
+                                    $productCat = $row['Cat_Name'];
+                        ?>
+                            <tr>
+                                <td><img src="<?php echo "../".$imagePRDCT;?>" class="artPhoto"></td>
+                                <td><?php echo $namePRDCT?></td>
+                                <td><?php echo $descriptionPRDCT?></td>
+                                <td><?php echo $productCat?></td>
+                                <td><?php echo "$".$price?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                </div>
+
+<?php 
+                        $query = "SELECT `ProductID`, `Product_Img` FROM `products`;";
+                        $result = $conn -> query($query);
+                        for($rowCounter = 0; $rowCounter <= 6; $rowCounter++) {?>
+                            <?php for($productCounter = 0; $productCounter <= 5; $productCounter++) {?>
+                                <?php while($row=$result->fetch_assoc()) {
+                                    $idProduct = $row['ProductID'];
+                                    $ProductIMG = $row['Product_Img'];
+                                ?>
+                                    <ul mstSellLst>
+                                        <li class="artList">
+                                            <a> 
+                                                <div >
+                                                    <img src="<?php echo "../".$ProductIMG;?>" class="artPhoto"> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>        
+                                <?php }?>
+                            <?php }?>
+                    <?php }?>

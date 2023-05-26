@@ -19,7 +19,7 @@
             </li>   
 
             <li class="carousel__slide currentSlide">
-                <a>
+                <a href="location.php">
                     <img src="../images/showcaseImg/location.jpg" id="location img" alt="locations" class="carousel__image"><h2>Our locations:</h2>
                 </a>
             </li> 
