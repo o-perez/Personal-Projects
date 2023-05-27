@@ -23,6 +23,39 @@
 
         <main>
             <div class="allProducts">
+                <div class="filtering">
+                    <form class="filteringForm" name="fiters" action="" method="$_POST">
+                        <h3>Filter by:</h3>
+                        <label for="productName">Name</label>
+                        <input type="search" placeholder="Product Name" label="Search"> 
+                        <label for="category">Categories:</label>
+                        <select name="prdctCat">
+                            <option value="none"></option>
+                            <?php 
+                                $catQuery = "SELECT * FROM categories;";
+                                $catResult =  $conn -> query($catQuery);
+                                while($row=$catResult->fetch_assoc()) {
+                                $categoryID = $row['CatID'];
+                                $categoryName = $row['Cat_Name'];
+                            ?>
+                                <option value="<?php $categoryID?>"><?php echo $categoryName?></option>
+                            <?php }?>
+                        </select>
+
+                        <label for="price">Price</label>
+                        <select name="prices">
+                            <option value="none"></option>
+                            <option value="over150">+$150</option>
+                            <option value="between50AND150">+$50 and -$150</option>
+                            <option value="equals50">$50</option>
+                            <option value="between50AND1">+$1 and -$50</option>
+                            <option value="free">Free</option>
+                        </select>
+                        <button type="submit"><img src="../images/icons/icons8_Search.ico"></button>
+                    </form>
+                    <hr class="divisor">
+                </div>
+
                 <div class="allProductsLST">
                     <?php
                         $query = "SELECT `ProductID`, `Product_Img` FROM `products`;";

@@ -226,6 +226,20 @@ body{
   margin-left: 50px;
   margin-top: 50px;
 }
+.divisor{
+  height: auto;
+  position: static;
+  color: black;
+  margin-top: 40px;
+  width: 100%;
+}
+.filtering{
+  background-color: lightcoral;
+}
+
+.filteringForm{
+  text-align: center;
+}
 /*End CSS for view all products.*/
 
 /*Begins CSS for product info*/
