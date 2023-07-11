@@ -10,6 +10,26 @@
         <!-- Required meta tags-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function showAllProducts() {
+            if (strName == "") {
+                document.getElementById("filterLists").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //document.getElementById("noFilters").style.display = 'none';
+                        document.getElementById("filterLists").innerHTML = this.responseText;
+                        
+                    }
+                };
+            xmlhttp.open("GET","filters.php?n="+strName,true);
+            xmlhttp.send();
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -36,12 +56,12 @@
 
                 <div class="article">
                     <?php
-                        $query = "SELECT `ProductID`, `Name`, `Product_Img` FROM `products` WHERE Price > 0.00 AND Sold >= 50;";
+                        $query = "SELECT `ProductID`, `NameProducts`, `Product_Img` FROM `products` WHERE Price > 0.00 AND Sold >= 50;";
                         $result = $conn -> query($query); 
                         for($counter = 0; $counter <= 5; $counter = $counter + 1){?>
                             <?php while($row=$result->fetch_assoc()){
                                 $idArt = $row['ProductID'];
-                                $nameArt = $row['Name'];
+                                $nameArt = $row['NameProducts'];
                                 // $descriptionArt = $row['Description'];
                                 // $price = $row['Price'];
                                 $imageArt = $row['Product_Img'];
@@ -74,12 +94,12 @@
 
                 <div class="article">
                     <?php
-                        $query2 = "SELECT `ProductID`, `Name`, `Product_Img` FROM `products` WHERE Price = 0.00 AND Sold >= 50;";
+                        $query2 = "SELECT `ProductID`, `NameProducts`, `Product_Img` FROM `products` WHERE Price = 0.00 AND Sold >= 50;";
                         $result2 = $conn -> query($query2); 
                         for($counter2 = 0; $counter2 <= 5; $counter2 = $counter2 + 1){?>
                             <?php while($row=$result2->fetch_assoc()){
                                 $idArt = $row['ProductID'];
-                                $nameArt = $row['Name'];
+                                $nameArt = $row['NameProducts'];
                                 // $descriptionArt = $row['Description'];
                                 // $price = $row['Price'];
                                 $imageArt = $row['Product_Img'];

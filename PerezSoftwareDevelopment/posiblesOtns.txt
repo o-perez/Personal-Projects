@@ -410,3 +410,26 @@ previous.onclick = function(){
                                 <?php }?>
                             <?php }?>
                     <?php }?>
+
+
+<div class="allProductsLST">
+                    <?php
+                        // $query = "SELECT `ProductID`, `Product_Img` FROM `products`;";
+                        // $officialQuery = printProducts();     
+                        $result = $conn -> query($query);
+                        while($row=$result->fetch_assoc()) {
+                        $idProduct = $row['ProductID'];
+                        $ProductIMG = $row['Product_Img'];
+                    ?>
+                        <div class="listOfProducts">
+                            <div class="prdList">
+                                <a href="productInfo.php?GetID=<?php echo $row['ProductID']; ?>"> 
+                                    <div >
+                                        <img src="<?php echo "../".$ProductIMG;?>" class="artPhoto"> 
+                                    </div>
+                                </a>
+                            </div>
+                        </div> 
+                        <?php ?>                
+                    <?php }?>
+                </div>

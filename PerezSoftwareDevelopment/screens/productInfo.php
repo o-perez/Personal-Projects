@@ -1,10 +1,10 @@
 <?php require('../include/connect.php'); 
 $selectedPRDCT = $_GET["GetID"];
-$query1 = "SELECT `ProductID`, `Name`, `Description`, `Cat_Name`, `Product_Img`, `Price` FROM products WHERE ProductID = $selectedPRDCT;";
+$query1 = "SELECT `ProductID`, `NameProducts`, `Description`, `Cat_Name`, `Product_Img`, `Price` FROM products WHERE ProductID = $selectedPRDCT;";
 $result = $conn -> query($query1);
 
 while($row = mysqli_fetch_assoc($result)){
-    $productName = $row['Name'];
+    $productName = $row['NameProducts'];
     $productDSCPTN = $row['Description'];
     $category = $row['Cat_Name'];
     $prdctIMGS = $row['Product_Img'];
