@@ -204,8 +204,9 @@ else {
     }
 
     else{
-        if($getResetConfirm == "true"){
-            $resetFilters->defaultDisplay();
-        }
+       
     }
+} 
+if($getResetConfirm == "true"){
+    $resetFilters->defaultDisplay();
 }
