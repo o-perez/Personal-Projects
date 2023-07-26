@@ -15,62 +15,78 @@
 
         <!--Ajax scripts-->
         <script>
-            var keepAllProducts = true;
+            // var jsPrdctName,
+            //     jsPrctCat,
+            //     jsPrctPrice;
             
-            function showByName(strName) {
-            if (strName == "") {
-                document.getElementById("filterLists").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        //document.getElementById("noFilters").style.display = 'none';
-                        document.getElementById("filterLists").innerHTML = this.responseText;
-                        
-                    }
-                };
-            xmlhttp.open("GET","filters.php?n="+strName,true);
-            xmlhttp.send();
-                }
-            }
+            // function showByName(strName) {
+            //     jsPrdctName = strName;
+            // }
 
-            function showByCategory(strCategory) {
-            if (strCategory == "") {
-                document.getElementById("filterLists").innerHTML = "";
-                return;
-            } else {
+            // function showByCategory(strCategory) {
+            //     jsPrctCat = strCategory;
+            // }
+
+            // function showByPrice(strPrice) {
+            //     jsPrctPrice = strPrice;
+            // }
+
+            function sendValues(){
+
+                var jsPrdctName,
+                    jsPrdctCat,
+                    jsPrdctPrice;
+
+                 jsPrdctName = document.getElementById('inputName').value;
+                 jsPrdctCat = document.getElementById('selectCat').value;
+                 jsPrdctPrice = document.getElementById('selectPrice').value;
+
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        //document.getElementById("noFilters").style.display = 'none';
                         document.getElementById("filterLists").innerHTML = this.responseText;
                        
                     }
                 };
-            xmlhttp.open("GET","filters.php?c="+strCategory,true);
-            xmlhttp.send();
-                }
+            xmlhttp.open("POST","filters.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("n="+jsPrdctName+"&c="+jsPrdctCat+"&p="+jsPrdctPrice);
             }
 
-            function showByPrice(strPrice) {
-            if (strPrice == "") {
-                document.getElementById("filterLists").innerHTML = "";
-                return;
-            } else {
+            function resetFiltersForm(){
+                var resetConfirm = "true";
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        //document.getElementById("noFilters").style.display = 'none';
-                        document.getElementById("filterLiss").innerHTML = this.responseText;
-                        
+                        document.getElementById("filterLists").innerHTML = this.responseText;
+                       
                     }
                 };
-            xmlhttp.open("GET","filters.php?p="+strPrice,true);
-            xmlhttp.send();
-                }
+                xmlhttp.open("POST","filters.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("r="+resetConfirm);
             }
+            
+            // $('#SendInfo').click(function(){
+            //     var jsPrdctName,
+            //         jsPrdctCategory,
+            //         jsPrdctPrice;
 
+            //     jsPrdctName = document.getElementById('inputName').value;
+            //     jsPrdctCategory = document.getElementById('selectCat').value;
+            //     jsPrdctPrice = document.getElementById('selectPrice').value;
+
+            //     filtersToSend = "n="+jsPrdctName+"&c="+jsPrdctCategory+"&p="+jsPrdctPrice; 
+            //     $.ajax({
+            //         url:'filters.php',
+            //         type: 'POST',
+            //         data: filtersToSend,
+            //     })
+
+            //     .done(function(ans){
+            //         $('#filterLists').html(ans)
+            //     });
+            // })
         </script>
     </head>
 
@@ -86,13 +102,13 @@
         <main>
             <div class="allProducts">
                 <div class="filtering">
-                    <form class="filteringForm" target="_SELF">
+                    <form  class="filteringForm" target="_SELF">
                         <h3>Filter by:</h3>
-                        <label for="productName">Name</label>
-                        <input name="productName" type="search" placeholder="Product Name" label="Search"? onchange="showByName(this.value)">
+                        <label for="NameProduct">Name</label>
+                        <input name="productName" type="search" id="inputName" placeholder="Product Name" label="Search">
                         <label for="prdctCat">Categories:</label>
-                        <select name="productCategories" onchange="showByCategory(this.value)">
-                            <option value="<?php $getVarCatName = "";?>" SELECTED></option>
+                        <select name="productCategories" id="selectCat">
+                            <option value="All" SELECTED>All</option>
 
                             <?php 
                                 $catQuery = "SELECT * FROM categories;";
@@ -100,23 +116,23 @@
                                 while($row=$catResult->fetch_assoc()) {
                                 $categoryID = $row['CatID'];
                                 $categoryName = $row['Cat_Name'];
-                                echo "<option value='$getVarCatName = $categoryName'>$categoryName</option>";
+                                echo "<option value='$categoryName'>$categoryName</option>";
                                 }
                             ?>
                         </select>
 
                         <label for="pricesLBL">Price</label>
-                        <select name="productPrices" onchange="showByPrice(this.value)">
+                        <select name="productPrices" id="selectPrice">
 
-                            <option value="0" SELECTED></option>
+                            <option value="All" SELECTED>All</option>
                             <option value="1">+$150</option>
                             <option value="2">+$50 and -$150</option>
                             <option value="3">$50</option>
                             <option value="4">+$1 and -$50</option>
                             <option value="5">Free</option>
                         </select>
-                        <!-- <button type="submit"><img src="../images/icons/icons8_Search.ico"></button> -->
-
+                        <button type="button" onclick="sendValues()"><img src="../images/icons/icons8_Search.ico"></button>
+                        <button type="reset" onclick="resetFiltersForm()">Reset</button>
                     </form>
                     <hr class="divisor">
                 </div>
@@ -141,8 +157,6 @@
                     </div> 
                     <?php }?>               
                 </div>
-
-                <!-- <div class="allProdcutsLST" id="filterLists"></div> -->
             </div>
         </main>
         
@@ -152,4 +166,3 @@
     </body>
 </html>
 
-https://www.delftstack.com/es/howto/php/onclick-php/
