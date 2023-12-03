@@ -38,6 +38,7 @@
             <header>
                 <?php include('include/pageHeader.php'); ?>
                 <hr>
+                <?php include('include/productSearchBar.php')?>
             </header>
         </div>
 

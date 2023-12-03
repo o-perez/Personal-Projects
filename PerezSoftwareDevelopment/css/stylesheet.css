@@ -300,3 +300,16 @@ body{
   font-weight: bold; 
 }
 /*End CSS for products info*/
+
+/*Begin CSS for big search bar*/
+#bigSearchBar{
+  display: flexbox;
+
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.searchBar{
+  display: flexbox;
+  width: 900px;
+}
