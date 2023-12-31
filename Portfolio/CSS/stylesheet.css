@@ -10,18 +10,23 @@ hr{
     width: 100%;
 }
 
+.navBarLinks a{
+    color: white;
+    text-decoration: none;
+}
+
 /* Laptops and Desktop display */
 @media (min-width: 769px) {
     header{
         display: flex;
         position: inherit;
         align-content: center;
-        height: 300px;
+        height: auto;
     }
 
     header div{
         width: 100%;
-        outline-style: outset;
+        /* outline-style: outset; */
     }
     #menuBtn{
         display: none;
@@ -68,6 +73,10 @@ hr{
         /* position: absolute; */
         text-align: center;
     }
+
+    .goingBackArrowCL{
+        transform: translate(-50px, 34px);
+    }
 }
 
 
@@ -77,12 +86,12 @@ hr{
         display: flex;
         position: inherit;
         align-content: center;
-        height: 300px;
+        height: auto;
     }
 
     header div{
         width: 100%;
-        outline-style: outset;
+        /* outline-style: outset; */
     }
 
    #menuBtn{
@@ -128,7 +137,7 @@ hr{
         display: flex;
         position: inherit;
         align-content: center;
-        height: 300px;
+        height: auto;
     }
 
     header div{

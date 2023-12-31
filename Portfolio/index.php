@@ -17,23 +17,18 @@
             <div id="MySelfPresentation">
                 <img src="Imgs\currentUser.png" alt="Image of myself.">
                 <h1>Orlando X Pérez Varela</h1>
+
+                <nav>
+                    <?php include('Include/navbar.php')?>
+                </nav>
             </div>
         </header>
         <main>
-            <nav>
-                <button id="menuBtn"><i class="material-icons">menu</i></button>
-                <div id="navToShow"class="navList">
-                    <container class="navInnerContainer">
-                        <ul>
-                            <li>About me</li>
-                            <li>Projects</li>
-                            <li>Contact me</li>
-                        </ul>
-                    </container>
-                </div>
-            </nav>
+            <!-- <nav>
+                ?php include('Include/navbar.php')?>
+            </nav> -->
         </main>
         <footer></footer>
-        <script type = "text/javascript" src=JavaScript\pageFunctions.js></script>
+        <script type = "text/javascript" src="JavaScript\pageFunctions.js"></script>
     </body>
 </html>
