@@ -19,6 +19,8 @@ function menuMobile(){
 
     var mobileNavBarStatus = document.getElementById('navToShow');
 
+    //Condition that determines if the navbar is visible.
+    //"===" means that returns true if the operands are equal and of the same type.
     if(mobileNavBarStatus.style.visibility === "visible"){
         mobileNavBarStatus.style.visibility = "hidden";
     }

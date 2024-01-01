@@ -4,7 +4,7 @@
         <ul class="navBarLinks">
             <li><a href="Pages/aboutMe.php">About me</a></li>
             <li>Projects</li>
-            <li>Contact me</li>
+            <li><a href="Pages/contact.php">Contact me</a></li>
         </ul>
     </container>
 </div>

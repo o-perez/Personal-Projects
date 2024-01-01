@@ -21,14 +21,17 @@
             </div>
         </header>
         <main>
-            <div>
+            <div class="aboutMePar">
                 <p>Hi! my name is Orlando X Pérez Varela I am recent Recent Computer Science graduate with 
-                experience on building and managing Web Pages and the desire to learn new things. Here are some of my personal
-                projects where I undertake my knowledge of Computer Science. Also you can find me on git on GitHub and LikedIn.</p>
+                experience on building and managing Web Pages and the desire to learn new things. I would like to 
+                specialize my carrer on Software Development and later emphasize my career in Cybersecurity. The porpuse of this 
+                virtual Portfolio is publishing some of my personal projects where I undertake my knowledge of Computer Science. 
+                To know more about me you can Contact Me or find me on GitHub and LinkedIn.</p>
             </div>
+
+            <?php include('../Include/profilesFrames.php')?>
         </main>
         <footer></footer>
         <script type = "text/javascript" src="../JavaScript/pageFunctions.js"></script>
     </body>
 </html>
-
