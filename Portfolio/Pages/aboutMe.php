@@ -15,8 +15,9 @@
             <div id="MySelfPresentation">
                 <img src="../Imgs\currentUser.png" alt="Image of myself.">
                 <nav>
+                    <div id="homeBttn" class="homeBttnCL"><button><a href="../index.php"><i class="material-icons">location_city</i></a></button></div>
                     <div id="goingBackArrow" class="goingBackArrowCL"><button><i class="material-icons">arrow_back</i></button></div>
-                    <?php include('../Include/navbar.php');?>
+                    <?php include('../Include/navbar2.php');?>
                 </nav>  
             </div>
         </header>
