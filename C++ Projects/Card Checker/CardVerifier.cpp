@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<ctype.h>
 
 class CardVerifier {
 private:
@@ -13,25 +14,57 @@ private:
 public:
 
 	void checkigValidation(std::string cardNumberToRecFunc) {
-		char cardNumberArrChar[16];
+        char cardNumberArrChar[16],
+            currentchar;
+        const char digitArrChar[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 		int cardNumberArrInt[16];
-		int charToInt;
+		int charToInt,
+            counter;
+        bool cardFraud = false;
 		std::string charToString;
 
+        //For loop used to turn the entered card number into an char array.
 		for (int counter = 0; counter < cardNumberToRecFunc.size(); counter++) {
-			cardNumberArrChar[counter] = cardNumberToRecFunc.at(counter);
-			//std::cout << cardNumberArrChar[counter] << "\n" << std::endl;
+            currentchar = cardNumberToRecFunc.at(counter);
+            if (!isdigit(currentchar)) {
+                 std::cout << "This card is a fraud!" << std::endl;
+                 cardFraud = true;
+                break;
+            }
+
+            else {
+                cardNumberArrChar[counter] = cardNumberToRecFunc.at(counter);      
+            }
 		}
 
-		for (int counter1 = 0; counter1 < 16; counter1++) {
-			/*
-			charToString = cardNumberArrChar[counter1];
-			cardNumberArrInt[counter1] = std::stoi(charToString);
-			std::cout << cardNumberArrInt[counter1] << "\n" << std::endl;*/
-			charToInt = cardNumberArrChar[counter1] - '0';
-			cardNumberArrInt[counter1] = charToInt;
-			std::cout << cardNumberArrInt[counter1] << "\n" << std::endl;
-		}
+        /*while (counter < cardNumberToRecFunc.size() || cardFraud != true) {
+            currentchar = cardNumberToRecFunc.at(counter);
+            if (!isdigit(currentchar)) {
+                std::cout << "This card is a fraud!" << std::endl;
+                cardFraud = true;
+            }
+
+            else {
+                cardNumberArrChar[counter] = cardNumberToRecFunc.at(counter);
+                counter++;
+            }
+        }*/
+
+        if (cardFraud == false) {
+            //Nested for loop used to turn char array into decimal and save it in an array.
+		    for (int counter1 = 0; counter1 < 16; counter1++) {
+                for (int counter2 = 0; counter2 < 10; counter2++) {
+                    charToInt = (int)digitArrChar[counter2] - 48; //This line is for convert char to int. The number 48 is decimal value of '0'.
+                    cardNumberArrInt[counter1] = charToInt;
+                }
+		    }
+
+            //For loop to move between the card number digits.
+            for (int counter3 = 0; counter3 < 16; counter3++) {
+                std::cout << cardNumberArrInt[counter3] << std::endl;
+            }
+        }
+        
 	}
 	//Function that is on charge of determines which type is the card.
 	void definningTheType(std::string cardNumberToRecFunc) {

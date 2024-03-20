@@ -1,1 +1,8 @@
-﻿  Card Checker.vcxproj -> C:\Proyectos personales\C++\Card Checker\x64\Debug\Card Checker.exe
+﻿  CardVerifier.cpp
+C:\xampp\htdocs\Personal-Projects\C++ Projects\Card Checker\CardVerifier.cpp(22,13): warning C4101: 'counter': unreferenced local variable
+  main.cpp
+C:\xampp\htdocs\Personal-Projects\C++ Projects\Card Checker\CardVerifier.cpp(22,13): warning C4101: 'counter': unreferenced local variable
+  (compiling source file 'main.cpp')
+  
+  Generating Code...
+  Card Checker.vcxproj -> C:\xampp\htdocs\Personal-Projects\C++ Projects\Card Checker\x64\Debug\Card Checker.exe
