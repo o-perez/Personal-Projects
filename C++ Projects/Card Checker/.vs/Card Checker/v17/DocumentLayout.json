@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\CardVerifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|solutionrelative:CardVerifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7FC09C54-23A4-4177-9B60-A8C03849A292}|Card Checker.vcxproj|C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\CardVerifier.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CardVerifier.cpp",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\CardVerifier.cpp",
               "RelativeDocumentMoniker": "CardVerifier.cpp",
               "ToolTip": "C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\CardVerifier.cpp",
               "RelativeToolTip": "CardVerifier.cpp",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAuwIEAAAAAAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-25T01:47:58.996Z",
               "EditorCaption": ""
@@ -51,16 +51,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\xampp\\htdocs\\Personal-Projects\\C\u002B\u002B Projects\\Card Checker\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAuwBcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-02-24T23:39:09.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-24T23:39:09.229Z"
             }
           ]
         }
